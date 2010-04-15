@@ -1,14 +1,50 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="utf-8"?>
 <s:Application xmlns:fx="http://ns.adobe.com/mxml/2009"
-               xmlns:s="library://ns.adobe.com/flex/spark">
+               xmlns:s="library://ns.adobe.com/flex/spark"
+               xmlns:mx="library://ns.adobe.com/flex/mx"
+               minWidth="955" minHeight="600"
+               preinitialize="application1_preinitializeHandler(event)"
+               xmlns:components="de.flashforum.ffk10.dojo.components.*">
+
     <fx:Script>
         <![CDATA[
 
-        import mx.controls.Alert;
+            import de.flashforum.ffk10.dojo.components.ContactsView;
+            import de.flashforum.ffk10.dojo.domain.Addressbook;
+            import de.flashforum.ffk10.dojo.mocks.AddressbookFactory;
+
+            import mx.events.FlexEvent;
+
+            [Bindable]
+            private var _addressbook:Addressbook;
+
+            private var contactsView:ContactsView;
+
+            protected function application1_preinitializeHandler(event:FlexEvent):void
+            {
+                _addressbook = AddressbookFactory.createAddressBook();
+                contactsView = new ContactsView();
+                contactsView.contacts = _addressbook.contacts;
+
+            }
+
+            protected function button1_clickHandler(event:MouseEvent):void
+            {
+                addElement(contactsView);
+            }
 
         ]]>
     </fx:Script>
 
-    <s:Button click="Alert.show('Hello, world')" label="Say Hello" />
+    <fx:Declarations>
+        <!-- Platzieren Sie nichtvisuelle Elemente (z. B. Dienste, Wertobjekte) hier -->
+    </fx:Declarations>
+
+    <!--
+     <components:AddressbookPanel dataProvider="{_addressbook.contacts.contacts}"/>
+     <components:ContactsView id="contactsView" contacts="{_addressbook.contacts}"/>
+     -->
+
+    <s:Button label="Drück mich" click="button1_clickHandler(event)" />
 
 </s:Application>

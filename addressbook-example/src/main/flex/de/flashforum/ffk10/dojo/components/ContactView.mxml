@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:VGroup xmlns:fx="http://ns.adobe.com/mxml/2009"
+          xmlns:s="library://ns.adobe.com/flex/spark"
+          xmlns:mx="library://ns.adobe.com/flex/mx"
+          color="0xffffff">
+
+    <fx:Declarations>
+        <!-- Platzieren Sie nichtvisuelle Elemente (z. B. Dienste, Wertobjekte) hier -->
+    </fx:Declarations>
+
+    <fx:Script>
+        <![CDATA[
+            import de.flashforum.ffk10.dojo.domain.contacts.Contact;
+
+            [Bindable]
+            private var _contact:Contact;
+
+            public function get contact():Contact
+            {
+                return _contact;
+            }
+
+            public function set contact(value:Contact):void
+            {
+                _contact = value;
+            }
+        ]]>
+    </fx:Script>
+
+    <s:HGroup>
+        <s:Label text="First Name" />
+        <s:Label id="firstNameDisplay" text="{_contact.firstName}" />
+    </s:HGroup>
+
+    <s:HGroup>
+        <s:Label text="Last Name" />
+        <s:Label id="lastNameDisplay" text="{_contact.lastName}" />
+    </s:HGroup>
+
+    <s:HGroup>
+        <s:Label text="Street" />
+        <s:Label id="streetDisplay" text="{_contact.street}" />
+    </s:HGroup>
+
+    <s:HGroup>
+        <s:Label text="Zip Code" />
+        <s:Label id="zipCodeDisplay" text="{_contact.zipCode}" />
+    </s:HGroup>
+
+    <s:HGroup>
+        <s:Label text="City" />
+        <s:Label id="cityDisplay" text="{_contact.city}" />
+    </s:HGroup>
+
+    <s:HGroup>
+        <s:Label text="Country" />
+        <s:Label id="countryDisplay" text="{_contact.country}" />
+    </s:HGroup>
+
+</s:VGroup>
