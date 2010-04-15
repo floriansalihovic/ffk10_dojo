@@ -2,6 +2,7 @@
 /.idea
 /*.iml
 /*/*.iml
+/out
 
 # Ignore maven output (${project.basedir}/target).
 /*/target
