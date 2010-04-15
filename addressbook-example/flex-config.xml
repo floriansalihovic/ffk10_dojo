@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flex-config xmlns="http://www.adobe.com/2006/flex-config">
+  <compiler>
+    <debug>true</debug>
+    <source-path><path-element>src/main/flex</path-element></source-path>
+  </compiler>
+  <file-specs>
+    <path-element>addressbook-example/src/main/flex/Dojo.mxml</path-element>
+  </file-specs>
+  <output>/Volumes/ffk10/ffk10_dojo/out/production/addressbook-example/Dojo.swf</output>
+</flex-config>

@@ -1,0 +1,8 @@
+# Ignore configuration folder and -files (*.iml) and from the ide.
+/.idea
+/*.iml
+/*/*.iml
+
+# Ignore maven output (${project.basedir}/target).
+/*/target
+
